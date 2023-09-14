@@ -12,13 +12,14 @@ import { useEffect, useState } from 'react';
 
 const HomePage = () => {
   
-  const { data, isFetching, isError, isSuccess } = useGetTopMoviesQuery();
+  const { data, isFetching, isSuccess } = useGetTopMoviesQuery();
   const [randomMovie, setRandomMovie] = useState({});
   useEffect(() => {
     if (isSuccess)  {
       console.log(data)
       setRandomMovie(data.results[Math.floor(Math.random() * data.results.length)])
     }
+    // eslint-disable-next-line
   }, [isSuccess]);
   
   const heroBackgroundProps = {

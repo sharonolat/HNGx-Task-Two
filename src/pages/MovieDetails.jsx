@@ -30,6 +30,7 @@ const MovieDetails = () => {
   useEffect(() => {
     isSuccess && console.log(data);
     isSuccess && setBackdropPath(data?.backdrop_path);
+    // eslint-disable-next-line
   }, [isSuccess]);
 
   return (
@@ -73,10 +74,7 @@ const MovieDetails = () => {
 
                 <div className='description'>
                   <p data-testid='movie-overview'>
-                    After thirty years, Maverick is still pushing the envelope
-                    as a top naval aviator, but must confront ghosts of his past
-                    when he leads TOP GUN's elite graduates on a mission that
-                    demands the ultimate sacrifice from those chosen to fly it.
+                    {data?.overview}
                   </p>
                 </div>
 
