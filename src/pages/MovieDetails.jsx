@@ -1,6 +1,6 @@
 import SideNav from '../components/SideNav';
 import '../styles/movie-details.scss';
-import playIcon from '../assets/icons/Play-white.svg';
+import playIcon from '../assets/icons/play-white.svg';
 import starIcon from '../assets/icons/star.svg';
 import ticketsIcon from '../assets/icons/two-tickets.svg';
 import listIcon from '../assets/icons/list.svg';
