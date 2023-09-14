@@ -1,0 +1,64 @@
+.movie-card{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 250px;
+  position: relative;
+  text-decoration: none;
+
+  .poster-image{
+    img{
+      width: 100%;
+      height: 370px;
+      object-fit: cover;
+    }
+  }
+  
+  .title{
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .release-date, .genre{
+    font-size: .75rem;
+    color: #9CA3AF;
+  }
+
+  .ratings{
+    display: flex;
+    justify-content: space-between;
+
+    .imdb, .rotten-tomatoes{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      font-size: .75rem;
+      font-weight: 400;
+      color: #111827;
+
+      img{
+        height: 17px;
+      }
+    }
+  }
+
+  .favorite{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+
+}

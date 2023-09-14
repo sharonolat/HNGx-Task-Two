@@ -1,0 +1,24 @@
+:root{
+  font-family: 'DM Sans', sans-serif;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #b3b3b3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #BE123C;
+  }  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+

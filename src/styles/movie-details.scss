@@ -1,0 +1,309 @@
+.movie-details{
+  display: flex;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+
+  .navbar{
+    display: none;
+  }
+  
+  .movie-details-content{
+    padding: 40px;
+    width: calc(100vw - 250px);
+    padding-bottom: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    
+    .movie-poster{
+      position: relative;
+      height: 449px;
+      
+      .play-movie{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 20px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .play-circle{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 110px;
+          height: 110px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.35);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .details-others{
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 15px;
+      
+      .details{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        
+        .header{
+          display: flex;
+          align-items: center;
+          gap: 17px;
+
+          .title{
+            display: flex;
+            gap: 8px;
+            
+            color: #404040;
+            font-size: 23px;
+            font-style: normal;
+            font-weight: 400;
+
+
+            *:nth-child(3), *:nth-child(5), *:nth-child(7) {
+              font-size: 1.25rem;
+            }
+          }
+
+          .genre{
+            display: flex;
+            gap: 20px;
+
+            p{
+              font-size: 14px;
+              font-weight: 500;
+              color: #BE123C;
+              padding: 2px 8px;
+              border: 1px solid #BE123C;
+              border-radius: 15px;
+            }
+          }
+        }
+
+        .description{
+          color: #333;
+          max-width: 774px;
+        }
+
+        .cast{
+          display: flex;
+          flex-direction: column;
+          gap: 31px;
+
+          p{
+            color: #333;
+            font-size: 1.25rem;
+
+            span{
+              color: #BE123C;
+            }
+          }
+        }
+
+        .awards{
+          border: none;
+          background: #BE123C;
+          width: fit-content;
+          padding: 13px 20px;
+          border-radius: 10px;
+          color: #fff;
+          font-size: 1.25rem;
+        }
+      }
+
+      .others{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .stars{
+          display: flex;
+          justify-content: end;
+          align-items: center;
+
+          & > div{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            p{
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              color: #E8E8E8;
+              font-size: 1.56rem;
+
+              span{
+                color: #666;
+                font-size: 1.25rem;
+              }
+            }
+          }
+        }
+
+        .options{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          button{
+            border: none;
+            border-radius: 10px;
+            padding: 13px 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #BE123C;
+          }
+
+          button.more-options{
+            border: 1px solid #BE123C;
+            background: rgba(190, 18, 60, 0.10);
+            color: #333;
+          }
+        }
+
+        .best-shows{
+          position: relative;
+          width: 100%;
+          
+          img{
+            border-radius: 0 0 12px 12px;
+            overflow: hidden;
+          }
+
+          .view-playlist{
+            position: absolute;
+            bottom: 4px;
+            width: 100%;
+            padding: 12px;
+
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(18, 18, 18, 0.50);
+            backdrop-filter: blur(2px);
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1250px){
+  .movie-details{
+    .navbar{
+      display: flex;
+      background: rgba(0,0,0,0.5);
+    }
+
+    padding-top: 80px;
+
+    .movie-details-content{
+      width: 100vw;
+      height: fit-content;
+
+      .details-others{
+        flex-direction: column;
+        gap: 20px;
+
+        .details{
+          .header{
+            justify-content: space-between;
+            .title{
+              flex-direction: column;
+              gap: 5px;
+
+              span.bullet-dot{
+                display: none;
+              }
+            }
+          }
+
+          .description{
+            max-width: 100%;
+          }
+        }
+      
+        .others{
+          .options{
+            flex-direction: row;
+            justify-content: space-between;
+            button{
+              width: 48%;
+            }
+            gap: 20px;
+
+          }
+          .best-shows{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 600px){
+  .movie-details{
+    .movie-details-content{
+      padding: 20px;
+
+      .details-others{
+        flex-direction: column;
+        gap: 20px;
+
+        .details{
+          .header{
+            display: block;
+            justify-content: space-between;
+            .title{
+              flex-direction: column;
+              gap: 5px;
+              margin-bottom: 10px;
+            }
+          }
+
+          .description{
+            font-size: 1rem;
+          }
+
+          .cast{
+            gap: 20px;
+          }
+
+        }
+      
+        .others{
+          .options{
+            flex-direction: column;
+            button{
+              width: 100%;
+            }
+            gap: 20px;
+
+          }
+        }
+      }
+    }
+  }
+}
