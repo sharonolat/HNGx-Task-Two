@@ -3,7 +3,7 @@ import TopNav from '../components/TopNav';
 import imdbIcon from '../assets/icons/imdb.svg';
 import rottenTomatoesIcon from '../assets/icons/tomato.svg';
 import playIcon from '../assets/icons/play.svg';
-import chevronRightIcon from '../assets/icons/Chevron-right.svg';
+import chevronRightIcon from '../assets/icons/chevron-right.svg';
 import Footer from '../components/Footer';
 import MovieCard from '../components/MovieCard';
 import Spinner from '../components/Spinner';
