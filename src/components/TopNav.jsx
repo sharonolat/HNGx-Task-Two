@@ -2,7 +2,7 @@ import '../styles/topNav.scss';
 import { Link } from 'react-router-dom';
 import LogoIcon from '../assets/icons/tv.svg';
 import SearchIcon from '../assets/icons/search.svg';
-import MenuIcon from '../assets/icons/Menu.svg';
+import MenuIcon from '../assets/icons/menu.svg';
 
 const TopNav = () => {
   return (
