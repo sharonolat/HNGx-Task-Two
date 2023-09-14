@@ -10,18 +10,18 @@ import Spinner from '../components/Spinner';
 import { useGetTopMoviesQuery } from '../redux/featureApi/movieApiSlice';
 import { useEffect, useState } from 'react';
 
-const HomePage = () => {
-  
+const HomePage = ({setSearch}) => {
   const { data, isFetching, isSuccess } = useGetTopMoviesQuery();
   const [randomMovie, setRandomMovie] = useState({});
   useEffect(() => {
-    if (isSuccess)  {
-      console.log(data)
-      setRandomMovie(data.results[Math.floor(Math.random() * data.results.length)])
-    }
+    if (isSuccess)
+      setRandomMovie(
+        data.results[Math.floor(Math.random() * data.results.length)]
+      );
+
     // eslint-disable-next-line
   }, [isSuccess]);
-  
+
   const heroBackgroundProps = {
     backgroundImage: `url('https://image.tmdb.org/t/p/original/${randomMovie?.backdrop_path}')`,
     backgroundPosition: 'center',
@@ -44,7 +44,7 @@ const HomePage = () => {
       {isSuccess && (
         <>
           <div className='home-hero' style={heroBackgroundProps}>
-            <TopNav />
+            <TopNav setSearch={setSearch}/>
 
             <div className='hero-content-container'>
               <div className='hero-content'>
@@ -53,16 +53,14 @@ const HomePage = () => {
                   <div className='hero-ratings'>
                     <div className='imbd'>
                       <img src={imdbIcon} alt='imdb' />
-                      <p>{(Math.random()*100).toFixed(1)} / 100</p>
+                      <p>{(Math.random() * 100).toFixed(1)} / 100</p>
                     </div>
                     <div className='rotten-tomatoes'>
                       <img src={rottenTomatoesIcon} alt='rotten-tomatoes' />
-                      <p>{Math.round(Math.random()*100)}%</p>
+                      <p>{Math.round(Math.random() * 100)}%</p>
                     </div>
                   </div>
-                  <p className='hero-description'>
-                    {randomMovie?.overview}
-                  </p>
+                  <p className='hero-description'>{randomMovie?.overview}</p>
                   <button className='watch-trailer'>
                     <img src={playIcon} alt='play' />
                     <p>WATCH TRAILER</p>

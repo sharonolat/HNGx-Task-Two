@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
 
         <div className='copyright'>
-          &copy; 20213 MovieBox by Sharon Olatunji
+          &copy; 2023 MovieBox by Sharon Olatunji
         </div>
       </div>
     </div>

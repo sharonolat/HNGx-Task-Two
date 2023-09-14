@@ -13,8 +13,7 @@ import { useEffect, useState } from 'react';
 import { convertToUTCDate } from '../utils/utils';
 import TopNav from '../components/TopNav';
 
-const MovieDetails = () => {
-  
+const MovieDetails = ({setSearch}) => {
   const { movieId } = useParams();
   const { isFetching, isSuccess, data } = useGetMovieByIdQuery({ id: movieId });
   const [backdropPath, setBackdropPath] = useState('');
@@ -28,7 +27,6 @@ const MovieDetails = () => {
   };
 
   useEffect(() => {
-    isSuccess && console.log(data);
     isSuccess && setBackdropPath(data?.backdrop_path);
     // eslint-disable-next-line
   }, [isSuccess]);
@@ -36,7 +34,7 @@ const MovieDetails = () => {
   return (
     <>
       <div className='movie-details'>
-        <TopNav />
+        <TopNav setSearch={setSearch}/>
         <SideNav />
         {isFetching && (
           <Spinner message={'Fetcing movie details. Please wait'} />
@@ -59,11 +57,15 @@ const MovieDetails = () => {
                   <h3 className='title'>
                     <span data-testid='movie-title'>{data?.title}</span>
                     <span className='bullet-dot'>&#x2022;</span>
-                    <span data-testid='movie-release-date'>{`${convertToUTCDate(data?.release_date)}`}</span>
+                    <span data-testid='movie-release-date'>{`${convertToUTCDate(
+                      data?.release_date
+                    )}`}</span>
                     <span className='bullet-dot'>&#x2022;</span>
                     <span>PG-13</span>
                     <span className='bullet-dot'>&#x2022;</span>
-                    <span data-testid='movie-runtime'>{data?.runtime} minutes</span>
+                    <span data-testid='movie-runtime'>
+                      {data?.runtime} minutes
+                    </span>
                   </h3>
 
                   <div className='genre'>
@@ -73,9 +75,7 @@ const MovieDetails = () => {
                 </div>
 
                 <div className='description'>
-                  <p data-testid='movie-overview'>
-                    {data?.overview}
-                  </p>
+                  <p data-testid='movie-overview'>{data?.overview}</p>
                 </div>
 
                 <div className='cast'>

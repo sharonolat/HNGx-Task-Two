@@ -28,3 +28,33 @@
     }
   }
 }
+
+@media(max-width: 768px){
+  .footer-container{
+    flex-direction: column;
+    gap: 0;
+
+    .footer{
+      gap: 24px;
+
+      .socials, .footer-links{
+        gap: 24px;
+      }
+    }
+  }
+}
+
+@media(max-width: 500px){
+  .footer-container{
+    .footer{
+      .socials, .footer-links{
+        gap: 12px;
+      }
+
+      .footer-links{
+        flex-direction: column;
+        text-align: center ;
+      }
+    }
+  }
+}
