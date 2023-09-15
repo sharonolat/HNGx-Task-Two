@@ -10,10 +10,9 @@ import { useParams } from 'react-router-dom';
 import { useGetMovieByIdQuery } from '../redux/featureApi/movieApiSlice';
 import Spinner from '../components/Spinner';
 import { useEffect, useState } from 'react';
-import { convertToUTCDate } from '../utils/utils';
 import TopNav from '../components/TopNav';
 
-const MovieDetails = ({setSearch}) => {
+const MovieDetails = ({ setSearch }) => {
   const { movieId } = useParams();
   const { isFetching, isSuccess, data } = useGetMovieByIdQuery({ id: movieId });
   const [backdropPath, setBackdropPath] = useState('');
@@ -34,7 +33,7 @@ const MovieDetails = ({setSearch}) => {
   return (
     <>
       <div className='movie-details'>
-        <TopNav setSearch={setSearch}/>
+        <TopNav setSearch={setSearch} />
         <SideNav />
         {isFetching && (
           <Spinner message={'Fetcing movie details. Please wait'} />
@@ -57,9 +56,9 @@ const MovieDetails = ({setSearch}) => {
                   <h3 className='title'>
                     <span data-testid='movie-title'>{data?.title}</span>
                     <span className='bullet-dot'>&#x2022;</span>
-                    <span data-testid='movie-release-date'>{`${convertToUTCDate(
-                      data?.release_date
-                    )}`}</span>
+                    <span data-testid='movie-release-date'>
+                      {data?.release_date}
+                    </span>
                     <span className='bullet-dot'>&#x2022;</span>
                     <span>PG-13</span>
                     <span className='bullet-dot'>&#x2022;</span>
