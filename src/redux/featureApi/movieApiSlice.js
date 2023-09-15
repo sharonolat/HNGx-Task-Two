@@ -11,7 +11,7 @@ export const movieApi = createApi({
   }),
   endpoints: (builder) => ({
     getTopMovies: builder.query({
-      query: () => '/movie/popular?language=en-US&page=1',
+      query: () => '/movie/top_rated?language=en-US&page=1',
     }),
     getMovieById: builder.query({
       query: ({id}) => `/movie/${id}`,
